@@ -1,0 +1,27 @@
+[
+  {
+    "title": "LLVM 22.1.1",
+    "source": "LLVM",
+    "url": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-22.1.1"
+  },
+  {
+    "title": "LLVM 22.1.0",
+    "source": "LLVM",
+    "url": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-22.1.0"
+  },
+  {
+    "title": "LLVM 22.1.0-rc3",
+    "source": "LLVM",
+    "url": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-22.1.0-rc3"
+  },
+  {
+    "title": "LLVM 22.1.0-rc2",
+    "source": "LLVM",
+    "url": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-22.1.0-rc2"
+  },
+  {
+    "title": "LLVM 22.1.0-rc1",
+    "source": "LLVM",
+    "url": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-22.1.0-rc1"
+  }
+]

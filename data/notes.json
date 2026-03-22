@@ -1,0 +1,21 @@
+﻿[
+  {
+    "title": {
+      "en": "Computer Architecture: A Quantitative Approach (6th Edition) Study Guide",
+      "zh": "《计算机体系结构：量化研究方法（第6版）》学习手册"
+    },
+    "category": {
+      "en": "Computer Architecture",
+      "zh": "计算机体系结构"
+    },
+    "updated": {
+      "en": "Updated 2026-03-20",
+      "zh": "更新于 2026-03-20"
+    },
+    "description": {
+      "en": "A reading guide and study notebook for CAQA 6th edition, focused on quantitative analysis, memory hierarchy, parallelism, and preparation for later GPGPU learning.",
+      "zh": "围绕《计算机体系结构：量化研究方法（第6版）》整理的阅读顺序与学习记录，重点关注定量分析、存储层次、并行性以及后续 GPGPU 学习准备。"
+    },
+    "url": "https://github.com/jizhaolu27-maker/jizhaolu27-maker.github.io/blob/main/notes/caqa-6e-study-guide.md"
+  }
+]

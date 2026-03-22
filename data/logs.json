@@ -1,0 +1,32 @@
+﻿[
+  {
+    "date": "2026-03-20",
+    "topic": {
+      "en": "Website",
+      "zh": "网站"
+    },
+    "title": {
+      "en": "Added a new architecture study note and a links page",
+      "zh": "新增了一份体系结构学习笔记和 Links 页面"
+    },
+    "summary": {
+      "en": "Added a CAQA 6th edition study guide to the notes page, and built a minimal Links page with a fixed Ventus GPGPU link plus recent LLVM release links.",
+      "zh": "在笔记页新增了《计算机体系结构：量化研究方法（第6版）》学习手册，同时上线了极简 Links 页面，包含固定的乘影 GPGPU 链接和最近的 LLVM 发布链接。"
+    }
+  },
+  {
+    "date": "2026-03-17",
+    "topic": {
+      "en": "Website",
+      "zh": "网站"
+    },
+    "title": {
+      "en": "Published my personal website",
+      "zh": "发布了自己的个人网站"
+    },
+    "summary": {
+      "en": "Built and published my personal homepage to organize study logs and notes in a clear and lightweight way.",
+      "zh": "搭建并发布了个人主页，用更清晰、更轻量的方式整理学习日志和学习笔记。"
+    }
+  }
+]

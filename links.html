@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links | Jizhao Lu</title>
+  <meta name="description" content="Selected fixed and recent reference links from Jizhao Lu.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="links">
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Jizhao Lu</a>
+      <div class="header-actions">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="logs.html" data-i18n="nav.logs">Logs</a>
+          <a href="notes.html" data-i18n="nav.notes">Notes</a>
+          <a href="links.html" aria-current="page" data-i18n="nav.links">Links</a>
+        </nav>
+        <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch language">
+          中文
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-intro">
+        <p class="section-kicker" data-i18n="links.kicker">Links</p>
+        <h1 data-i18n="links.title">Selected links</h1>
+        <p class="page-copy" data-i18n="links.copy">
+          A short list of stable references I want to keep close at hand.
+        </p>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker" data-i18n="links.fixedTitle">Fixed</p>
+            <h2 data-i18n="links.fixedTitle">Fixed</h2>
+          </div>
+        </div>
+        <div id="fixed-links" class="link-list" aria-live="polite"></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker" data-i18n="links.recentTitle">Recent</p>
+            <h2 data-i18n="links.recentTitle">Recent</h2>
+          </div>
+        </div>
+        <div id="recent-links" class="link-list" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

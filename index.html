@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jizhao Lu</title>
+  <meta name="description" content="Jizhao Lu's personal homepage. Learning Digital IC, Java, and other new knowledge.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="home">
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">Jizhao Lu</a>
+      <div class="header-actions">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
+          <a href="logs.html" data-i18n="nav.logs">Logs</a>
+          <a href="notes.html" data-i18n="nav.notes">Notes</a>
+          <a href="links.html" data-i18n="nav.links">Links</a>
+        </nav>
+        <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch language">
+          中文
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow" data-i18n="home.eyebrow">Personal Website</p>
+        <h1>Jizhao Lu</h1>
+        <p class="hero-text" data-i18n="home.heroText">
+          A senior student learning Digital IC, Java, and other new knowledge.
+          This site keeps my recent study progress and notes in one clean place.
+        </p>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker" data-i18n="home.logsKicker">Recent Learning Logs</p>
+            <h2 data-i18n="home.logsTitle">Latest 3 updates</h2>
+          </div>
+          <a class="text-link" href="logs.html" data-i18n="home.viewAllLogs">View all logs</a>
+        </div>
+        <div id="recent-logs" class="log-list" aria-live="polite"></div>
+      </section>
+
+      <section class="section-block compact-links">
+        <a class="panel-link" href="logs.html">
+          <span class="panel-title" data-i18n="home.allLogsTitle">All Learning Logs</span>
+          <span class="panel-copy" data-i18n="home.allLogsCopy">See the complete timeline of my study progress.</span>
+        </a>
+        <a class="panel-link" href="notes.html">
+          <span class="panel-title" data-i18n="home.notesTitle">Study Notes</span>
+          <span class="panel-copy" data-i18n="home.notesCopy">Open note entries and jump to the related GitHub Markdown
+            pages.</span>
+        </a>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
