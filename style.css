@@ -272,6 +272,42 @@ html[lang="zh-CN"] .link-source {
   gap: 16px;
 }
 
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.tag-filter:empty {
+  display: none;
+}
+
+.tag-filter-button,
+.note-pill {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.tag-filter-button {
+  padding: 7px 13px;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.tag-filter-button:hover,
+.tag-filter-button[aria-pressed="true"] {
+  border-color: var(--border-strong);
+  background: var(--bg-soft);
+  color: var(--accent-deep);
+  box-shadow: 0 8px 18px rgba(15, 54, 112, 0.06);
+}
+
 .log-card,
 .note-card,
 .link-item,
@@ -307,6 +343,22 @@ html[lang="zh-CN"] .link-source {
   margin: 0 0 10px;
   font-size: 1.1rem;
   letter-spacing: -0.02em;
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.note-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  color: var(--accent-deep);
+  background: var(--bg-soft);
 }
 
 .link-list {

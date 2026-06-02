@@ -31,6 +31,7 @@ const i18n = {
     notes: {
       kicker: "Study Notes",
       title: "Notes and references",
+      allTags: "All",
       copy:
         "This page collects study notes and reference materials. Some notes may link to Feishu cloud documents for ongoing editing, and can later be migrated into Markdown files in this repository once they become stable."
     },
@@ -82,6 +83,7 @@ const i18n = {
     notes: {
       kicker: "学习笔记",
       title: "笔记与参考资料",
+      allTags: "全部",
       copy: "这里整理学习笔记与参考资料。部分内容可能先链接到飞书云文档，方便持续编辑；当内容相对稳定后，再迁移为仓库内的 Markdown 文件。"
     },
     links: {
@@ -110,6 +112,8 @@ let currentLanguage = localStorage.getItem(langKey) || "en";
 if (!i18n[currentLanguage]) {
   currentLanguage = "en";
 }
+
+let selectedNoteTag = "all";
 
 function getText(path) {
   return path.split(".").reduce((value, key) => value[key], i18n[currentLanguage]);
@@ -177,7 +181,74 @@ function renderLogs(logs, container, limit) {
   });
 }
 
-function renderNotes(notes, container) {
+function getNoteTags(note) {
+  if (!Array.isArray(note.tags)) {
+    return [];
+  }
+
+  return note.tags
+    .filter((tag) => typeof tag === "string" && tag.trim())
+    .map((tag) => tag.trim());
+}
+
+function getUniqueNoteTags(notes) {
+  const tagSet = new Set();
+
+  notes.forEach((note) => {
+    getNoteTags(note).forEach((tag) => tagSet.add(tag));
+  });
+
+  return Array.from(tagSet).sort((a, b) => a.localeCompare(b));
+}
+
+function isExternalUrl(url) {
+  return /^https?:\/\//i.test(String(url || ""));
+}
+
+function getNoteLinkAttributes(url) {
+  const href = String(url || "#");
+  const targetAttributes = isExternalUrl(href) ? ' target="_blank" rel="noopener noreferrer"' : "";
+  return `href="${href}"${targetAttributes}`;
+}
+
+function renderNoteFilters(notes, filterContainer, notesContainer) {
+  if (!filterContainer) {
+    return;
+  }
+
+  filterContainer.innerHTML = "";
+
+  if (!Array.isArray(notes) || notes.length === 0) {
+    return;
+  }
+
+  const tags = getUniqueNoteTags(notes);
+  if (selectedNoteTag !== "all" && !tags.includes(selectedNoteTag)) {
+    selectedNoteTag = "all";
+  }
+
+  const options = [{ label: i18n[currentLanguage].notes.allTags, value: "all" }].concat(
+    tags.map((tag) => ({ label: tag, value: tag }))
+  );
+
+  options.forEach((option) => {
+    const button = document.createElement("button");
+    button.className = "tag-filter-button";
+    button.type = "button";
+    button.textContent = option.label;
+    button.dataset.tag = option.value;
+    button.setAttribute("aria-pressed", String(selectedNoteTag === option.value));
+    button.addEventListener("click", () => {
+      selectedNoteTag = option.value;
+      renderNoteFilters(notes, filterContainer, notesContainer);
+      renderNotes(notes, notesContainer, selectedNoteTag);
+    });
+
+    filterContainer.appendChild(button);
+  });
+}
+
+function renderNotes(notes, container, activeTag = "all") {
   container.innerHTML = "";
 
   if (!Array.isArray(notes) || notes.length === 0) {
@@ -185,7 +256,19 @@ function renderNotes(notes, container) {
     return;
   }
 
-  notes.forEach((note) => {
+  const visibleNotes =
+    activeTag === "all" ? notes : notes.filter((note) => getNoteTags(note).includes(activeTag));
+
+  if (visibleNotes.length === 0) {
+    container.appendChild(createStateCard(i18n[currentLanguage].states.noNotes));
+    return;
+  }
+
+  visibleNotes.forEach((note) => {
+    const tags = getNoteTags(note);
+    const tagMarkup = tags.length
+      ? `<div class="note-tags">${tags.map((tag) => `<span class="note-pill">${tag}</span>`).join("")}</div>`
+      : "";
     const card = document.createElement("article");
     card.className = "note-card";
     card.innerHTML = `
@@ -195,8 +278,9 @@ function renderNotes(notes, container) {
       </div>
       <h3>${getLocalizedValue(note.title)}</h3>
       <p>${getLocalizedValue(note.description)}</p>
+      ${tagMarkup}
       <div class="note-footer">
-        <a href="${note.url}" target="_blank" rel="noreferrer">${i18n[currentLanguage].common.openMarkdown}</a>
+        <a ${getNoteLinkAttributes(note.url)}>${i18n[currentLanguage].common.openMarkdown}</a>
       </div>
     `;
     container.appendChild(card);
@@ -269,14 +353,19 @@ async function initLogsPage() {
 
 async function initNotesPage() {
   const container = document.getElementById("notes-list");
+  const filterContainer = document.getElementById("note-filters");
   if (!container) {
     return;
   }
 
   try {
     const notes = await fetchJson("data/notes.json");
-    renderNotes(notes, container);
+    renderNoteFilters(notes, filterContainer, container);
+    renderNotes(notes, container, selectedNoteTag);
   } catch (error) {
+    if (filterContainer) {
+      filterContainer.innerHTML = "";
+    }
     container.innerHTML = "";
     container.appendChild(createStateCard(i18n[currentLanguage].states.loadNotesError));
   }

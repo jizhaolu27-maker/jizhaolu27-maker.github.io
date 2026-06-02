@@ -57,6 +57,8 @@
 
 - Keep `notes.html` and `links.html` functional even when their data arrays are empty.
 - Notes entries are stored in `data/notes.json`.
+- Each note may include a `tags` array.
+- Tags are used by the Notes page for lightweight filtering.
 - A note link may point either to an external document, such as a Feishu cloud document, or to a Markdown file inside the repository.
 - Use external links for notes that are still being actively edited.
 - Once a note becomes stable, it may be migrated into `notes/*.md`, and the corresponding URL in `data/notes.json` should be updated.

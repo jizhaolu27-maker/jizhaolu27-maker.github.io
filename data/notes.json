@@ -16,6 +16,12 @@
       "en": "A temporary note for CUDA, GPU programming, and related computer architecture learning. It is still being edited and may later be migrated into a Markdown note in this repository.",
       "zh": "用于暂存 CUDA、GPU 编程和相关体系结构学习记录；内容仍在持续编辑，后续稳定后可迁移为仓库内 Markdown 笔记。"
     },
+    "tags": [
+      "CUDA",
+      "GPU",
+      "Architecture",
+      "Temporary"
+    ],
     "url": "https://ccnxwjrkcpk6.feishu.cn/docx/RKC0dCUvHoqG6txqP9hceptCnpg?from=from_copylink"
   }
 ]
