@@ -73,6 +73,7 @@
 - Use relative paths only.
 - Keep links compatible with GitHub Pages.
 - Re-check CSS links, script links, JSON fetch paths, navigation links, and note links after edits.
+- When changing `style.css` or `app.js`, update the query version in HTML links/scripts if the change should appear immediately on GitHub Pages.
 - Do not commit generated caches such as `__pycache__/` or `*.pyc`.
 
 ## Validation
