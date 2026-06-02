@@ -1,0 +1,5 @@
+.vscode/
+.cursor/
+.crossnote/
+__pycache__/
+*.pyc
