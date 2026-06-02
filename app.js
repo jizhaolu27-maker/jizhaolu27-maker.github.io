@@ -14,14 +14,14 @@ const i18n = {
     home: {
       eyebrow: "Personal Website",
       heroText:
-        "A senior student learning Digital IC, Java, and other new knowledge. This site keeps my recent study progress and notes in one clean place.",
+        "This site keeps my recent study progress and study notes in one clean place.",
       logsKicker: "Recent Learning Logs",
       logsTitle: "Latest 3 updates",
       viewAllLogs: "View all logs",
       allLogsTitle: "All Learning Logs",
       allLogsCopy: "See the complete timeline of my study progress.",
       notesTitle: "Study Notes",
-      notesCopy: "Open note entries and jump to the related GitHub Markdown pages."
+      notesCopy: "Open note entries and related reference materials."
     },
     logs: {
       kicker: "Learning Logs",
@@ -31,7 +31,8 @@ const i18n = {
     notes: {
       kicker: "Study Notes",
       title: "Notes and references",
-      copy: "These notes link to Markdown files on GitHub, so I can keep my learning material organized and easy to update."
+      copy:
+        "This page collects study notes and reference materials. Some notes may link to Feishu cloud documents for ongoing editing, and can later be migrated into Markdown files in this repository once they become stable."
     },
     links: {
       kicker: "Links",
@@ -49,7 +50,7 @@ const i18n = {
       loadLinksError: "Unable to load links. If you are previewing locally, use a local server or GitHub Pages."
     },
     common: {
-      openMarkdown: "Open GitHub Markdown",
+      openMarkdown: "Open note",
       openLink: "Open link"
     }
   },
@@ -64,14 +65,14 @@ const i18n = {
     },
     home: {
       eyebrow: "个人网站",
-      heroText: "我是一名正在学习数字 IC、Java 以及其他新知识的大四学生。这个网站用简洁、轻量的方式记录我最近的学习进展和学习笔记。",
+      heroText: "这个网站用简洁、轻量的方式记录我最近的学习进展和学习笔记。",
       logsKicker: "最近学习日志",
       logsTitle: "最新 3 条更新",
       viewAllLogs: "查看全部日志",
       allLogsTitle: "全部学习日志",
       allLogsCopy: "查看我最近学习进展的完整时间线。",
       notesTitle: "学习笔记",
-      notesCopy: "打开笔记条目，并跳转到对应的 GitHub Markdown 页面。"
+      notesCopy: "打开笔记条目和相关参考资料。"
     },
     logs: {
       kicker: "学习日志",
@@ -81,7 +82,7 @@ const i18n = {
     notes: {
       kicker: "学习笔记",
       title: "笔记与参考资料",
-      copy: "这些笔记链接到 GitHub 上的 Markdown 文件，方便我持续整理和更新学习材料。"
+      copy: "这里整理学习笔记与参考资料。部分内容可能先链接到飞书云文档，方便持续编辑；当内容相对稳定后，再迁移为仓库内的 Markdown 文件。"
     },
     links: {
       kicker: "链接",
@@ -99,7 +100,7 @@ const i18n = {
       loadLinksError: "无法加载链接。如果你正在本地预览，请使用本地服务器或 GitHub Pages。"
     },
     common: {
-      openMarkdown: "打开 GitHub Markdown",
+      openMarkdown: "打开笔记",
       openLink: "打开链接"
     }
   }

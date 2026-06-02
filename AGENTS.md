@@ -56,11 +56,15 @@
 ## Notes And Links
 
 - Keep `notes.html` and `links.html` functional even when their data arrays are empty.
-- Store note entries in `data/notes.json`.
+- Notes entries are stored in `data/notes.json`.
+- A note link may point either to an external document, such as a Feishu cloud document, or to a Markdown file inside the repository.
+- Use external links for notes that are still being actively edited.
+- Once a note becomes stable, it may be migrated into `notes/*.md`, and the corresponding URL in `data/notes.json` should be updated.
+- Do not add private, permission-restricted, or sensitive links unless they are intentionally public/shareable.
 - Store link entries in `data/links-fixed.json` and `data/links-recent.json`.
 - Frontend pages must not fetch external websites directly at runtime.
 - Keep links compact: title, source when useful, and URL.
-- If adding Markdown notes later, use lowercase kebab-case file names.
+- Use lowercase kebab-case file names for repository Markdown notes.
 
 ## Paths And Compatibility
 
